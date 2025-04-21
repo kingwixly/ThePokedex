@@ -20,10 +20,7 @@
         .pokedex-container {
              flex-grow: 1;
         }
-        /* Ensure list scrolls smoothly */
-        #pokemon-list {
-             -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        }
+        #pokemon-list { -webkit-overflow-scrolling: touch; }
         #pokemon-list::-webkit-scrollbar { width: 8px; }
         #pokemon-list::-webkit-scrollbar-track { background: #e5e7eb; border-radius: 10px; }
         #pokemon-list::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 10px; }
@@ -43,9 +40,8 @@
         .type-dragon { background-color: #6F35FC; color: white; } .type-dark { background-color: #705746; color: white; }
         .type-steel { background-color: #B7B7CE; color: #212121; } .type-fairy { background-color: #D685AD; color: white; }
         .pokedex-body { background-color: #DC2626; border: 10px solid #B91C1C; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), inset 0 0 10px rgba(0,0,0,0.3); }
-        /* *** MODIFIED: Consistent fixed height for screens *** */
-        .screen { background-color: #D1D5DB; border: 5px solid #4B5563; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); display: flex; flex-direction: column; overflow-y: auto; height: 600px; /* Fixed height */ }
-        .list-screen { background-color: #D1D5DB; border: 5px solid #4B5563; box-shadow: inset 0 0 5px rgba(0,0,0,0.3); display: flex; flex-direction: column; height: 600px; /* Fixed height */ }
+        .screen { background-color: #D1D5DB; border: 5px solid #4B5563; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); display: flex; flex-direction: column; overflow-y: auto; height: 600px; }
+        .list-screen { background-color: #D1D5DB; border: 5px solid #4B5563; box-shadow: inset 0 0 5px rgba(0,0,0,0.3); display: flex; flex-direction: column; height: 600px; }
         .pokemon-list-item { cursor: pointer; transition: background-color 0.2s ease; }
         .pokemon-list-item:hover { background-color: #9CA3AF; }
         .pokemon-list-item.selected { background-color: #6B7280; color: white; font-weight: bold; }
@@ -66,7 +62,11 @@
 
                 <div id="image-container" class="bg-white/50 rounded-lg p-4 w-48 h-48 md:w-56 md:h-56 flex items-center justify-center mb-4 shadow-inner mx-auto">
                      <div id="detail-loader" class="loader" style="display: none;"></div>
-                     <img id="pokemon-image" src="https://placehold.co/150x150/e0e0e0/a0a0a0?text=Pok%C3%A9mon+Image" alt="Select a Pokemon to view its image" class="max-w-full max-h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/a0a0a0?text=Error'">
+                     <img id="pokemon-image"
+                          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/54.png"
+                          alt="Confused Psyduck waiting for selection"
+                          class="max-w-full max-h-full object-contain"
+                          onerror="this.onerror=null; this.src='https://placehold.co/150x150/e0e0e0/a0a0a0?text=Error'; this.alt='Error loading image'">
                 </div>
 
                 <div id="pokemon-types" class="flex justify-center gap-2 mb-4 min-h-[28px]"> <span class="text-gray-500 italic text-sm">Types will appear here</span>
